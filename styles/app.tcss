@@ -1,0 +1,4 @@
+.sidebar {
+    background: orange;
+    width: 15;
+}
