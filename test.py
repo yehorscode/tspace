@@ -18,7 +18,6 @@ def getSize(path):
     files = path[2]
     to_scan = []
 
-
     for folder in folders:
         to_scan.append(os.path.join(base_path, folder))
     for file in files:
@@ -44,6 +43,6 @@ def getSize(path):
     print(len(to_scan))
     return to_scan, size
 
-def getFolderSpace(path = "/home/yehors/tspace/counter"):
+def getFolderSpace(path = "/home/yehors/Pulpit"):
     return getSize(getSpace(path))
 print(getFolderSpace())
