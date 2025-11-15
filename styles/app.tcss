@@ -2,3 +2,7 @@
     background: orange;
     width: 15;
 }
+.app-content {
+    padding: 1;
+    align: center top;
+}
