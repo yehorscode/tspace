@@ -43,6 +43,9 @@ def getSize(path):
     print(len(to_scan))
     return to_scan, size
 
-def getFolderSpace(path = "/home/yehors/Pulpit"):
+
+def getFolderSpace(path = "/home/yehors/tspace/counter"):
     return getSize(getSpace(path))
+
+
 print(getFolderSpace())
