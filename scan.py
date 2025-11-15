@@ -1,15 +1,21 @@
 import os
 from tqdm import tqdm
 import humanize
+from collections import deque
+
+def _normalize_path(path: str) -> str:
+    return os.path.abspath(os.path.expandvars(os.path.expanduser(path)))
 
 def getSpaceFile(path):
-        try:
-            return os.path.getsize(path)
-        except OSError as e:
-            print(f"getSpaceFile: cannot space out '{path}': {e}")
-            return 0
+    path = _normalize_path(path)
+    try:
+       return os.path.getsize(path)
+    except OSError as e:
+        print(f"getSpaceFile: cannot space out '{path}': {e}")
+        return 0
 
 def getSpace(path = "/home/yehors/tspace/counter", debug = False):
+    path = _normalize_path(path)
     try:
         root, dirs, files = next(os.walk(path))
     except (OSError, StopIteration) as e:
@@ -29,18 +35,17 @@ def getSize(path, debug: bool = False, pbar_enabled: bool = False, count_hardlin
     pbar_enabled (bool, False) = enable/disable progress bar
     count_hardlinks_once (bool, True) = count hardlinks only once  
     """
-    size = 0
     base_path, folders, files = path
 
-    to_scan = [os.path.join(base_path, f) for f in folders]
-    to_scan += [os.path.join(base_path, f) for f in files]
+    to_scan = deque([os.path.join(base_path, f) for f in folders])
+    to_scan.extend(os.path.join(base_path, f) for f in files)
 
     visited_inodes = set() if count_hardlinks_once else None
-
     progress = tqdm(total=len(to_scan), unit='items') if pbar_enabled else None
 
+    size = 0
     while to_scan:
-        item = to_scan.pop(0)
+        item = to_scan.popleft()
         try:
             if os.path.islink(item):
                 try:
@@ -116,11 +121,11 @@ def getSize(path, debug: bool = False, pbar_enabled: bool = False, count_hardlin
         except Exception:
             pass
 
-
     return size
 
 
 def getFolderSpace(path = "/home/yehors/tspace"):
+    path = _normalize_path(path)
     try:
         return getSize(getSpace(path), False, True)
     except Exception as e:
