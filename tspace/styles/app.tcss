@@ -8,6 +8,7 @@
 }
 .cancel-scan {
     background: $error;
+    margin-left: 2;
 }
 .scan-dir {
     background: $success;
@@ -29,4 +30,5 @@
 }
 .exit {
     background: black;
+    margin-left: 2;
 }

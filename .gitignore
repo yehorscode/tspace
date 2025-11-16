@@ -1,1 +1,6 @@
 /.venv
+dist/
+build/
+tspace/__pycache__
+scan.log
+tspace/scan.log

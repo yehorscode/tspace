@@ -1,7 +1,7 @@
 """
-Apparently its a good practice to say what the app does in this line. And i will abuse it and write absolutely nothing important and straight up jiberish.
+Simple TUI app to show how much space a folder takes.
 """
-from scan import getFolderSpace
+from .scan import getFolderSpace
 from textual.app import App, ComposeResult
 from textual.widgets import Label
 from textual.containers import VerticalScroll, Horizontal, Vertical
@@ -12,6 +12,7 @@ import asyncio
 from threading import Event
 from concurrent.futures import CancelledError
 import contextlib
+from pathlib import Path
 
 class Sidebar(Vertical):
     def compose(self) -> ComposeResult:
@@ -43,7 +44,7 @@ class AppContent(VerticalScroll):
         scan_btn.disabled = True
         cancel_btn.disabled = False
         label.update("Scanning...")
-
+        
         self._cancel_event = Event()
 
         async def animate(task: asyncio.Task):
@@ -119,13 +120,8 @@ class AppContent(VerticalScroll):
             classes="app-content",
         )
 
-
 class tSpace(App):
-    BINDINGS = [
-        ("q", "exit", "Exit"),
-        ("esc", "exit", "Exit"),
-    ]
-    CSS_PATH = "styles/app.tcss"
+    CSS_PATH = Path(__file__).with_name("styles") / "app.tcss"
     def compose(self) -> ComposeResult:
         yield Header(show_clock=True, icon="tS", id="header", time_format="%H:%M:%S")
         yield Horizontal(
@@ -134,7 +130,11 @@ class tSpace(App):
         )
         yield Footer(id="footer", show_command_palette=False, classes="footer")
 
-
-if __name__ == "__main__":
+def main() -> None:
+    """Console-script entrypoint to run the app."""
     app = tSpace()
     app.run()
+
+
+if __name__ == "__main__":
+    main()
