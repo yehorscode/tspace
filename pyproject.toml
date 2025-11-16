@@ -1,7 +1,7 @@
 [project]
-name = "tspace"
-version = "0.1.0"
-description = "Show space a folder takes up"
+name = "tspace1"
+version = "0.1.1"
+description = "Show space a folder IS
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -38,7 +38,7 @@ tspace = "tspace.main:main"
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.build_meta"
+build-backend = "setuptools.build_meta"	
 
 [tool.setuptools.packages.find]
 where = ["."]
