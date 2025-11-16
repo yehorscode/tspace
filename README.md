@@ -14,4 +14,4 @@ Here is how:
 3. Make a new venv `python3 -m venv .venv`
 4. Activate venv by doing `source .venv/bin/activate` or `source .venv/bin/activate.fish` or `source .venv/bin/activate.zsh`
 5. run `pip install tspace1`
-6. run `tspace1`, and try out the app!
+6. run `tspace`, and try out the app!
