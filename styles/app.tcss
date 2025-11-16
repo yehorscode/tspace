@@ -6,3 +6,27 @@
     padding: 1;
     align: center top;
 }
+.cancel-scan {
+    background: $error;
+}
+.scan-dir {
+    background: $success;
+}
+.app-content {
+    padding: 3;
+}
+.scan-dir-div {
+    align: center middle;
+}
+.directory-size {
+    align: center middle;
+}
+.scan-dir-vert {
+    align: center middle;
+}
+#Input {
+    border: none;
+}
+.exit {
+    background: black;
+}
