@@ -1,7 +1,7 @@
 [project]
 name = "tspace1"
 version = "0.1.1"
-description = "Show space a folder IS
+description = "Show space a folder IS"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

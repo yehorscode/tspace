@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: tspace1
+Version: 0.1.1
+Summary: Show space a folder IS
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: aiohappyeyeballs==2.6.1
+Requires-Dist: aiohttp==3.13.2
+Requires-Dist: aiohttp-jinja2==1.6
+Requires-Dist: aiosignal==1.4.0
+Requires-Dist: attrs==25.4.0
+Requires-Dist: click==8.3.0
+Requires-Dist: frozenlist==1.8.0
+Requires-Dist: humanize==4.14.0
+Requires-Dist: idna==3.11
+Requires-Dist: Jinja2==3.1.6
+Requires-Dist: linkify-it-py==2.0.3
+Requires-Dist: markdown-it-py==4.0.0
+Requires-Dist: MarkupSafe==3.0.3
+Requires-Dist: mdit-py-plugins==0.5.0
+Requires-Dist: mdurl==0.1.2
+Requires-Dist: msgpack==1.1.2
+Requires-Dist: multidict==6.7.0
+Requires-Dist: platformdirs==4.5.0
+Requires-Dist: propcache==0.4.1
+Requires-Dist: Pygments==2.19.2
+Requires-Dist: rich==14.2.0
+Requires-Dist: textual==6.6.0
+Requires-Dist: tqdm==4.67.1
+Requires-Dist: typing_extensions==4.15.0
+Requires-Dist: uc-micro-py==1.0.3
+Requires-Dist: yarl==1.22.0
+
+# tspace
+tspace is short for **t**erminal **space**. A terminal ui (tui) built with textual library and python 3.11 to check for how much space a directory occupies on the disk.
+note: the app checks for **apparent-size** so it **does not reflect how much the directory takes up *disk space* but instead reflect how much the individual directory takes up real bytes** so it does **not** show how much it uses space but is shows *how big is it*. 
+
+App does the same job as `du --apparent-size -sh <folder>`, but slower and with a TUI
+

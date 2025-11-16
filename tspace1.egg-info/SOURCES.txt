@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+tspace/__init__.py
+tspace/main.py
+tspace/scan.py
+tspace/styles/app.tcss
+tspace1.egg-info/PKG-INFO
+tspace1.egg-info/SOURCES.txt
+tspace1.egg-info/dependency_links.txt
+tspace1.egg-info/entry_points.txt
+tspace1.egg-info/requires.txt
+tspace1.egg-info/top_level.txt
