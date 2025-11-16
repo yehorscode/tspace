@@ -5,7 +5,7 @@ note: the app checks for **apparent-size** so it **does not reflect how much the
 App does the same job as `du --apparent-size -sh <folder>`, but slower and with a TUI
 Pypi: https://pypi.org/project/tspace1/
 ### Demo:
-...
+yt link: https://youtu.be/PhVKSI0RhCo
 
 ### Installation manually
 Here is how:
